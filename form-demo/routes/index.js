@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var debug = require('debug')('form-demo');
 
 var state = [];
 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'COMP 2406 Simple form demo' });
+  debug('Rendering the main page');
 });
 
 router.post('/add', function(req, res) {
